@@ -85,6 +85,12 @@
   line-height: 1.55;
 }
 
+.qpv-banner-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .qpv-download-btn {
   display: inline-flex;
   align-items: center;
@@ -103,6 +109,26 @@
 
 .qpv-download-btn:hover {
   background: rgba(255,255,255,0.25);
+}
+
+.qpv-finish-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1.5px solid #ffffff;
+  border-radius: 8px;
+  color: var(--btn-dark);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.qpv-finish-btn:hover {
+  opacity: 0.9;
 }
 
 /* ── Paper card ── */

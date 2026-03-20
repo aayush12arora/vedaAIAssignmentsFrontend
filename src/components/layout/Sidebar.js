@@ -14,6 +14,7 @@ import './Sidebar.css';
 
 const Sidebar = ({ mobileOpen, onClose }) => {
   const navigate = useNavigate();
+  const logoSrc = `${process.env.PUBLIC_URL || ''}/logo.svg`;
 
   const navItems = [
     { to: '/', icon: Home, label: 'Home', type: 'link' },
@@ -36,18 +37,8 @@ const Sidebar = ({ mobileOpen, onClose }) => {
       <aside className={`sidebar${mobileOpen ? ' sidebar--open' : ''}`}>
         <div className="sidebar-logo-row">
           <Link to="/" className="sidebar-logo" onClick={onClose}>
-            <div className="sidebar-logo-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" className="sidebar-logo-svg" role="img">
-                <defs>
-                  <linearGradient id="vedaLogoBg" x1="5" y1="4" x2="35" y2="36" gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stopColor="#ff8d62" />
-                    <stop offset="0.45" stopColor="#d5531b" />
-                    <stop offset="1" stopColor="#6a2316" />
-                  </linearGradient>
-                </defs>
-                <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#vedaLogoBg)" />
-                <path d="M7.5 10.5h8.1l4.7 16.1 3.3-9.3h8.9L24.1 30h-7.4L7.5 10.5Z" fill="#ffffff" />
-              </svg>
+            <div className="sidebar-logo-icon">
+              <img src={logoSrc} alt="VedaAI logo" className="sidebar-logo-image" />
             </div>
             <span className="sidebar-logo-name">VedaAI</span>
           </Link>

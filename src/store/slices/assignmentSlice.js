@@ -28,6 +28,10 @@ const initialState = {
   error: null,
   
   // Generation status
+  generationTracking: {
+    assignmentId: null,
+    jobId: null
+  },
   generationStatus: {
     progress: 0,
     message: '',
@@ -118,6 +122,12 @@ const assignmentSlice = createSlice({
         status: 'processing'
       };
     },
+    setGenerationTracking: (state, action) => {
+      state.generationTracking = {
+        assignmentId: action.payload?.assignmentId || null,
+        jobId: action.payload?.jobId || null
+      };
+    },
     generateQuestionsSuccess: (state, action) => {
       state.generating = false;
       state.generationStatus = {
@@ -125,6 +135,7 @@ const assignmentSlice = createSlice({
         message: 'Questions generated successfully!',
         status: 'completed'
       };
+      state.generationTracking.jobId = null;
       // Update the assignment in the list
       const index = state.assignments.findIndex(a => a.id === action.payload.assignmentId);
       if (index !== -1) {
@@ -143,6 +154,7 @@ const assignmentSlice = createSlice({
         message: action.payload,
         status: 'failed'
       };
+      state.generationTracking.jobId = null;
     },
     
     // Update generation progress
@@ -157,6 +169,7 @@ const assignmentSlice = createSlice({
     // Reset generation status
     resetGenerationStatus: (state) => {
       state.generationStatus = initialState.generationStatus;
+      state.generationTracking = initialState.generationTracking;
     },
     
     // Clear error
@@ -207,6 +220,7 @@ export const {
   createAssignmentSuccess,
   createAssignmentFailure,
   generateQuestionsRequest,
+  setGenerationTracking,
   generateQuestionsSuccess,
   generateQuestionsFailure,
   updateGenerationProgress,

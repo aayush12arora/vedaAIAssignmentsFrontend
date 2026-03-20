@@ -12,6 +12,7 @@ import {
   createAssignmentSuccess,
   createAssignmentFailure,
   generateQuestionsRequest,
+  setGenerationTracking,
   generateQuestionsFailure,
   deleteAssignmentRequest,
   deleteAssignmentSuccess,
@@ -88,7 +89,9 @@ function* createAssignmentSaga(action) {
     // Ensure client is subscribed to this assignment room before generation starts.
     socketService.subscribeToAssignment(assignmentId);
 
-    yield call(assignmentApi.generate, assignmentId);
+    const generationResponse = yield call(assignmentApi.generate, assignmentId);
+    const jobId = generationResponse?.data?.data?.jobId || null;
+    yield put(setGenerationTracking({ assignmentId, jobId }));
     toast.success('Question generation started!');
   } catch (error) {
     const message = error.response?.data?.message || 'Failed to create assignment';
@@ -106,7 +109,9 @@ function* generateQuestionsSaga(action) {
     // Keep listening for progress events for this assignment from Home/View pages.
     socketService.subscribeToAssignment(assignmentId);
 
-    yield call(assignmentApi.generate, assignmentId);
+    const generationResponse = yield call(assignmentApi.generate, assignmentId);
+    const jobId = generationResponse?.data?.data?.jobId || null;
+    yield put(setGenerationTracking({ assignmentId, jobId }));
     // Success will be handled by WebSocket
     toast.success('Question generation started!');
   } catch (error) {

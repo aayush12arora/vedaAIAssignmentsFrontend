@@ -87,6 +87,7 @@ export const assignmentApi = {
   delete: (id) => apiClient.delete(`/assignments/${id}`),
   generate: (id) => apiClient.post(`/assignments/${id}/generate`),
   regenerate: (id) => apiClient.post(`/assignments/${id}/regenerate`),
+  getGenerationStatus: (assignmentId, jobId) => apiClient.get(`/assignments/${assignmentId}/job/${jobId}`),
   getQuestionPaper: (id) => apiClient.get(`/assignments/${id}/paper`),
   uploadFile: (id, formData) => apiClient.post(`/assignments/${id}/upload`, formData, {
     headers: { 'Content-Type': 'multipart/form-data' }

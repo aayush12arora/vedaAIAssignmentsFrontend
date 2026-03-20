@@ -242,6 +242,39 @@
   margin-top: 4px;
 }
 
+.af-nav--single {
+  justify-content: flex-start;
+}
+
+.af-processing-step,
+.af-review-step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.af-review-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.af-review-card p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.af-review-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
 .af-nav-btn {
   display: inline-flex;
   align-items: center;

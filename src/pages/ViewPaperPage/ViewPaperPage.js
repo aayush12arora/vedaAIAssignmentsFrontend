@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { QuestionPaperView, GeneratingShimmer } from '../../components/questionPaper';
 import { fetchQuestionPaper, downloadPDF, prefetchPDF } from '../../store/slices/questionPaperSlice';
@@ -10,8 +10,11 @@ import './ViewPaperPage.css';
 
 const ViewPaperPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { assignmentId } = useParams();
   const dispatch = useDispatch();
+
+  const fromReview = Boolean(location.state?.fromReview);
   
   const { currentPaper, loading, generating } = useSelector((state) => state.questionPaper);
   const { generating: assignmentGenerating, generationStatus } = useSelector((state) => state.assignment);
@@ -34,6 +37,20 @@ const ViewPaperPage = () => {
   }, [currentPaper?.id, dispatch]);
 
   const handleBack = () => {
+    if (fromReview) {
+      navigate('/create');
+      return;
+    }
+
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+
+    navigate('/');
+  };
+
+  const handleFinish = () => {
     navigate('/');
   };
 
@@ -77,6 +94,8 @@ const ViewPaperPage = () => {
         onBack={handleBack}
         onDownload={handleDownload}
         onPrint={handlePrint}
+        showFinish={fromReview}
+        onFinish={handleFinish}
       />
     </div>
   );

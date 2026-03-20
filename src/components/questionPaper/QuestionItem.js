@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RefreshCw, Eye, EyeOff, CheckCircle } from 'lucide-react';
-import { Badge, Button } from '../common';
+import { Button } from '../common';
 import './QuestionItem.css';
 
 const QuestionItem = ({ 
@@ -12,14 +12,7 @@ const QuestionItem = ({
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const getDifficultyBadge = (difficulty) => {
-    const variants = {
-      easy: 'success',
-      medium: 'warning',
-      hard: 'danger'
-    };
-    return variants[difficulty] || 'secondary';
-  };
+  const stripDifficultyPrefix = (text = '') => text.replace(/^\s*\[(easy|moderate|medium|hard|challenging)\]\s*/i, '');
 
   const resolveTrueFalseAnswer = () => {
     const raw = question.correctAnswer ?? question.answer;
@@ -129,15 +122,12 @@ const QuestionItem = ({
       <div className="question-header">
         <span className="question-number">Q{questionNumber}.</span>
         <div className="question-meta">
-          <Badge variant={getDifficultyBadge(question.difficulty)} size="small">
-            {question.difficulty}
-          </Badge>
           <span className="question-marks">{question.marks} marks</span>
         </div>
       </div>
 
       <div className="question-body">
-        <p className="question-text">{question.questionText || question.text}</p>
+        <p className="question-text">{stripDifficultyPrefix(question.questionText || question.text)}</p>
         {renderQuestionContent()}
       </div>
 

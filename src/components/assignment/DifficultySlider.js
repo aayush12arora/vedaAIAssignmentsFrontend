@@ -17,27 +17,41 @@ const DifficultySlider = ({ distribution, onChange }) => {
   }, [distribution]);
 
   const handleChange = (difficulty, newValue) => {
-    const parsedValue = parseInt(newValue) || 0;
-    const clampedValue = Math.min(100, Math.max(0, parsedValue));
-    
-    // Calculate the total of other values
-    const otherKeys = ['easy', 'medium', 'hard'].filter(k => k !== difficulty);
+    const parsedValue = Number.parseInt(newValue, 10) || 0;
+    const targetValue = Math.min(100, Math.max(0, parsedValue));
+    const otherKeys = ['easy', 'medium', 'hard'].filter((key) => key !== difficulty);
+    const remaining = 100 - targetValue;
     const otherTotal = otherKeys.reduce((sum, key) => sum + values[key], 0);
-    
-    // Ensure total doesn't exceed 100
-    let finalValue = clampedValue;
-    if (clampedValue + otherTotal > 100) {
-      finalValue = 100 - otherTotal;
+
+    const redistributed = {};
+
+    if (otherTotal === 0) {
+      const baseShare = Math.floor(remaining / otherKeys.length);
+      let leftover = remaining - baseShare * otherKeys.length;
+
+      otherKeys.forEach((key, index) => {
+        redistributed[key] = baseShare + (index < leftover ? 1 : 0);
+      });
+    } else {
+      let assigned = 0;
+
+      otherKeys.forEach((key, index) => {
+        if (index === otherKeys.length - 1) {
+          redistributed[key] = remaining - assigned;
+          return;
+        }
+
+        const share = Math.round((values[key] / otherTotal) * remaining);
+        redistributed[key] = share;
+        assigned += share;
+      });
     }
 
-    const newValues = { ...values, [difficulty]: finalValue };
-    
-    // Auto-adjust remaining if needed
-    const total = newValues.easy + newValues.medium + newValues.hard;
-    if (total < 100) {
-      // Add remaining to medium by default
-      newValues.medium += (100 - total);
-    }
+    const newValues = {
+      ...values,
+      ...redistributed,
+      [difficulty]: targetValue
+    };
 
     setValues(newValues);
     onChange(newValues);

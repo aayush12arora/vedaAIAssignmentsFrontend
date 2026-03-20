@@ -6,7 +6,7 @@ import Section from './Section';
 import { regenerateQuestions } from '../../store/slices/questionPaperSlice';
 import './QuestionPaperView.css';
 
-const QuestionPaperView = ({ onBack, onDownload }) => {
+const QuestionPaperView = ({ onBack, onDownload, showFinish = false, onFinish }) => {
   const dispatch = useDispatch();
   const paperRef = useRef(null);
   const [pdfGenerating, setPdfGenerating] = useState(false);
@@ -123,9 +123,16 @@ const QuestionPaperView = ({ onBack, onDownload }) => {
       {/* Dark AI banner */}
       <div className="qpv-ai-banner">
         <p className="qpv-ai-message">{aiMessage}</p>
-        <button className="qpv-download-btn" onClick={handleDownloadPdf} disabled={pdfGenerating}>
-          <Download size={15} /> {pdfGenerating ? 'Generating PDF…' : 'Download as PDF'}
-        </button>
+        <div className="qpv-banner-actions">
+          <button className="qpv-download-btn" onClick={handleDownloadPdf} disabled={pdfGenerating}>
+            <Download size={15} /> {pdfGenerating ? 'Generating PDF…' : 'Download as PDF'}
+          </button>
+          {showFinish && (
+            <button className="qpv-finish-btn" onClick={onFinish}>
+              Finish Review
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Formal paper */}
