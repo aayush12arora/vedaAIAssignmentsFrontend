@@ -1,5 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { assignmentApi } from '../../services/api';
+import socketService from '../../services/socket';
 import {
   fetchAssignmentsRequest,
   fetchAssignmentsSuccess,
@@ -83,6 +84,10 @@ function* createAssignmentSaga(action) {
     // Automatically start question generation
     const assignmentId = assignment.id || assignment._id;
     yield put(generateQuestionsRequest());
+
+    // Ensure client is subscribed to this assignment room before generation starts.
+    socketService.subscribeToAssignment(assignmentId);
+
     yield call(assignmentApi.generate, assignmentId);
     toast.success('Question generation started!');
   } catch (error) {
@@ -97,6 +102,10 @@ function* generateQuestionsSaga(action) {
   yield put(generateQuestionsRequest());
   try {
     const assignmentId = action.payload;
+
+    // Keep listening for progress events for this assignment from Home/View pages.
+    socketService.subscribeToAssignment(assignmentId);
+
     yield call(assignmentApi.generate, assignmentId);
     // Success will be handled by WebSocket
     toast.success('Question generation started!');

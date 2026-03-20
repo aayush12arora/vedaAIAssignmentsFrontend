@@ -39,7 +39,7 @@ const AssignmentCard = ({ assignment, onView, onDelete, onGenerate, isGenerating
   return (
     <div
       className={`asgn-card${isProcessing ? ' asgn-card--processing' : ''}`}
-      onClick={() => !isProcessing && onView(assignment)}
+      onClick={() => onView(assignment)}
     >
       <div className="asgn-card-top">
         <div className="asgn-card-title-row">
@@ -63,7 +63,7 @@ const AssignmentCard = ({ assignment, onView, onDelete, onGenerate, isGenerating
           </button>
           {menuOpen && (
             <div className="asgn-dropdown">
-              {hasQuestions && (
+              {(hasQuestions || isProcessing) && (
                 <button
                   className="asgn-dd-item"
                   onClick={(e) => { e.stopPropagation(); setMenuOpen(false); onView(assignment); }}
