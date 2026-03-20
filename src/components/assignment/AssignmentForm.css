@@ -1,0 +1,298 @@
+/* ── AssignmentForm shell ── */
+.af-shell {
+  width: 100%;
+}
+
+/* ── Stepper ── */
+.af-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.af-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.35;
+  transition: opacity var(--transition-fast);
+}
+
+.af-step--done {
+  opacity: 1;
+}
+
+.af-step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--btn-dark);
+}
+
+.af-step-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.af-step-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 4px;
+  margin-bottom: 14px;
+  min-width: 24px;
+}
+
+.af-step-line--done {
+  background: var(--btn-dark);
+}
+
+/* ── Form ── */
+.af-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.af-section-header {
+  margin-bottom: 4px;
+}
+
+.af-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 2px;
+}
+
+.af-section-sub {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Fields */
+.af-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.af-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.af-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.af-label-hint {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.af-date-wrap {
+  position: relative;
+}
+
+.af-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: #fff;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.af-input:focus {
+  border-color: var(--text-muted);
+}
+
+.af-input--error {
+  border-color: var(--danger-color);
+}
+
+.af-error {
+  font-size: 12px;
+  color: var(--danger-color);
+  margin: 0;
+}
+
+/* ── Question types header ── */
+.af-qt-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.af-qt-col-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  width: 130px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.af-qt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.af-add-qt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.af-add-qt-btn:hover {
+  opacity: 0.7;
+}
+
+/* Totals row */
+.af-totals {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.af-totals strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* ── Textarea ── */
+.af-textarea-wrap {
+  position: relative;
+}
+
+.af-textarea {
+  width: 100%;
+  padding: 12px 48px 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: #fff;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast);
+}
+
+.af-textarea:focus {
+  border-color: var(--text-muted);
+}
+
+.af-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.af-mic-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  transition: color var(--transition-fast);
+}
+
+.af-mic-btn:hover {
+  color: var(--text-primary);
+}
+
+/* ── Navigation buttons ── */
+.af-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4px;
+}
+
+.af-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.af-nav-btn--prev {
+  background: #fff;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.af-nav-btn--prev:hover {
+  border-color: var(--text-muted);
+}
+
+.af-nav-btn--next {
+  background: var(--btn-dark);
+  border: none;
+  color: #fff;
+}
+
+.af-nav-btn--next:hover:not(:disabled) {
+  background: var(--btn-dark-hover);
+}
+
+.af-nav-btn--next:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .af-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .af-qt-col-label {
+    width: 90px;
+    font-size: 11px;
+  }
+
+  .af-totals {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+}

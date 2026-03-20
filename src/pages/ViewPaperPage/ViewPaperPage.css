@@ -1,0 +1,17 @@
+.view-paper-page {
+  min-height: 100vh;
+  background-color: var(--bg-secondary, #f9fafb);
+}
+
+.view-paper-page.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Print styles */
+@media print {
+  .view-paper-page {
+    background-color: white;
+  }
+}

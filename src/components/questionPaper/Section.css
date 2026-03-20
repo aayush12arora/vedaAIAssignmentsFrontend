@@ -1,0 +1,117 @@
+.section-card {
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-secondary, #f9fafb);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.section-header:hover {
+  background-color: var(--bg-tertiary, #f3f4f6);
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-number {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.section-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-stats {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #4b5563);
+}
+
+.section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #6b7280);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.section-toggle:hover {
+  color: var(--text-primary, #1f2937);
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.section-instructions {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #4b5563);
+  font-style: italic;
+  padding: 0.75rem;
+  background-color: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+  margin: 0;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Print styles */
+@media print {
+  .section-header {
+    cursor: default;
+  }
+
+  .section-toggle,
+  .section-actions {
+    display: none;
+  }
+
+  .section-content {
+    padding: 1rem 0;
+  }
+}

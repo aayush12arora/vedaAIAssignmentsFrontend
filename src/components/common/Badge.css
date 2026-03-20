@@ -1,0 +1,92 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 999px;
+  text-transform: capitalize;
+}
+
+/* Sizes */
+.badge-small {
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+.badge-medium {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.badge-large {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+/* Variants */
+.badge-default {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.badge-primary {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.badge-success {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-danger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.badge-info {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* Difficulty badges */
+.badge-easy {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge-medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-hard {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Status badges */
+.badge-draft {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.badge-processing {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.badge-completed {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge-failed {
+  background: #fee2e2;
+  color: #dc2626;
+}

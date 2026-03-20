@@ -1,0 +1,120 @@
+/* ── Question type row ── */
+.qt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Dropdown */
+.qt-select-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.qt-select {
+  width: 100%;
+  padding: 9px 32px 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.qt-select:focus {
+  border-color: var(--text-muted);
+}
+
+/* Remove button */
+.qt-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.qt-remove-btn:hover {
+  color: var(--danger-color);
+  background: var(--danger-light);
+}
+
+/* Counter */
+.qt-counter {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 108px;
+}
+
+.qt-counter-btn {
+  width: 30px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.qt-counter-btn:hover:not(:disabled) {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.qt-counter-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qt-counter-val {
+  flex: 1;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  height: 36px;
+  line-height: 36px;
+  min-width: 28px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .qt-row {
+    flex-wrap: wrap;
+  }
+
+  .qt-select-wrap {
+    width: 100%;
+    flex: none;
+  }
+
+  .qt-counter {
+    width: 96px;
+  }
+}

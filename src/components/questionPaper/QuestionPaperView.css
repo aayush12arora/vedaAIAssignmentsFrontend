@@ -1,0 +1,290 @@
+/* ── Question Paper View ── */
+.qpv-page {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 80px;
+}
+
+/* Center helper for loading/error states */
+.qpv-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 24px;
+}
+
+.qpv-generating-card,
+.qpv-msg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  padding: 40px 32px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.qpv-gen-status {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.qpv-msg-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.qpv-msg-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.qpv-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--btn-dark);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── AI Banner ── */
+.qpv-ai-banner {
+  background: var(--btn-dark);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.qpv-ai-message {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  flex: 1;
+  line-height: 1.55;
+}
+
+.qpv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+}
+
+.qpv-download-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── Paper card ── */
+.qpv-paper-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 32px 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* School header */
+.qpv-school-header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qpv-school-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.qpv-school-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 2px 0;
+}
+
+/* Meta row */
+.qpv-paper-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  margin: 12px 0 8px;
+  font-weight: 500;
+}
+
+.qpv-instructions {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 6px 0 12px;
+  font-style: italic;
+}
+
+.qpv-fields-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qpv-blank {
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+/* Sections */
+.qpv-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.qpv-end-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 24px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ── Mobile toolbar ── */
+.qpv-mobile-toolbar {
+  display: none;
+  position: fixed;
+  bottom: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--btn-dark);
+  border-radius: var(--radius-pill);
+  padding: 6px 8px;
+  gap: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 90;
+  align-items: center;
+}
+
+.qpv-mob-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.qpv-mob-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.qpv-mob-ask {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .qpv-paper-card {
+    padding: 20px 16px;
+  }
+
+  .qpv-fields-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .qpv-mobile-toolbar {
+    display: flex;
+  }
+
+  .qpv-page {
+    padding-bottom: 140px;
+  }
+}
+
+/* Print */
+@media print {
+  .qpv-ai-banner,
+  .qpv-mobile-toolbar {
+    display: none;
+  }
+
+  .qpv-paper-card {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* ── PDF generation mode — hide interactive controls ── */
+.qpv-paper-card.pdf-mode .question-actions,
+.qpv-paper-card.pdf-mode .section-actions,
+.qpv-paper-card.pdf-mode .section-toggle,
+.qpv-paper-card.pdf-mode .section-header-right .section-stats {
+  display: none !important;
+}
+
+.qpv-paper-card.pdf-mode .section-header {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+/* Remove card shadows/borders so pages look clean */
+.qpv-paper-card.pdf-mode {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.qpv-paper-card.pdf-mode .section-card,
+.qpv-paper-card.pdf-mode .card {
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure badge text is readable in PDF */
+.qpv-paper-card.pdf-mode .badge {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

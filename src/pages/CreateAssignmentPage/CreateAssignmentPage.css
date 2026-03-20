@@ -1,0 +1,36 @@
+.cap-page {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.cap-header {
+  margin-bottom: 20px;
+}
+
+.cap-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.cap-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cap-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  padding: 28px 28px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .cap-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+}

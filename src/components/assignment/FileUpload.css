@@ -1,0 +1,135 @@
+/* ── FileUpload ── */
+.fu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fu-hidden-input {
+  display: none;
+}
+
+/* Drop zone */
+.fu-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px 20px;
+  border: 1.5px dashed var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.fu-zone:hover,
+.fu-zone--drag {
+  border-color: var(--text-muted);
+  background: #f0f0f2;
+}
+
+.fu-cloud-icon {
+  color: var(--text-muted);
+}
+
+.fu-primary-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.fu-secondary-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.fu-browse-btn {
+  margin-top: 4px;
+  padding: 8px 18px;
+  background: #fff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.fu-browse-btn:hover {
+  border-color: var(--text-muted);
+}
+
+/* Preview */
+.fu-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+}
+
+.fu-file-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.fu-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fu-file-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fu-file-size {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.fu-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  transition: color var(--transition-fast);
+}
+
+.fu-remove-btn:hover {
+  color: var(--danger-color);
+}
+
+/* Hint & error */
+.fu-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.fu-error {
+  font-size: 12px;
+  color: var(--danger-color);
+  margin: 0;
+}
+
+
+
+

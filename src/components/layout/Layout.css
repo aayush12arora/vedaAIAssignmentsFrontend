@@ -1,0 +1,197 @@
+/* ── Layout shell ── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-secondary);
+}
+
+.layout-body {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+}
+
+/* ── Top header ── */
+.layout-header {
+  height: 56px;
+  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.lh-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lh-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.lh-menu-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.lh-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.lh-back-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.lh-grid-icon {
+  color: var(--text-muted);
+}
+
+.lh-page-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lh-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lh-icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+}
+
+.lh-notif-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 7px;
+  height: 7px;
+  background: var(--brand-orange);
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+}
+
+.lh-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.lh-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-tertiary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+}
+
+.lh-user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ── Main content ── */
+.layout-main {
+  flex: 1;
+  padding: 24px;
+  overflow-x: hidden;
+}
+
+/* ── Mobile bottom nav ── */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--btn-dark);
+  border-radius: 16px 16px 0 0;
+  padding: 0 16px;
+  z-index: 150;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mbn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+.mbn-item.active,
+.mbn-item:hover {
+  color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .layout-body {
+    margin-left: 0;
+  }
+
+  .lh-menu-btn {
+    display: flex;
+  }
+
+  .lh-user-name,
+  .lh-grid-icon {
+    display: none;
+  }
+
+  .layout-main {
+    padding: 16px;
+    padding-bottom: 80px; /* space for bottom nav */
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+}
+
