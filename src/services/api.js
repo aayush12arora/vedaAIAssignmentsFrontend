@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://50.17.69.250/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.aayushdevcreations.in/api';
 const ASSIGNMENT_CREATE_TIMEOUT_MS = Number(process.env.REACT_APP_ASSIGNMENT_CREATE_TIMEOUT_MS || 120000);
 
 const getNow = () => {

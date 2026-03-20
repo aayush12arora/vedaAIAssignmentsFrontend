@@ -8,7 +8,7 @@ import {
 import { setQuestionPaper, updateProgress } from '../store/slices/questionPaperSlice';
 import toast from 'react-hot-toast';
 
-const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || window.location.origin;
+const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || window.location.origin || 'https://api.aayushdevcreations.in';
 
 class SocketService {
   constructor() {
