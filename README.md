@@ -10,20 +10,35 @@ Add your screenshots in the paths below.
 
 ### 1. Dashboard / Assignments List
 <img width="2549" height="1410" alt="image" src="https://github.com/user-attachments/assets/4aa98e55-3f42-4f98-9873-4cc25a5eea4c" />
+<img width="2553" height="1254" alt="image" src="https://github.com/user-attachments/assets/3d09753d-8dfa-472e-bdef-7062d680f9a0" />
 
-![Dashboard](docs/screenshots/01-dashboard.png)
+
+# Mobile View
+<img width="412" height="897" alt="image" src="https://github.com/user-attachments/assets/b4dcc1ec-b3bc-4829-ad06-76fb7ca7524f" />
+<img width="419" height="903" alt="image" src="https://github.com/user-attachments/assets/890b2dd1-de3e-4322-9c35-719db5d44b9d" />
+
 
 ### 2. Create Assignment Form
-![Create Assignment](docs/screenshots/02-create-assignment.png)
+
+<img width="2553" height="1256" alt="image" src="https://github.com/user-attachments/assets/03baa81f-67a4-4063-8415-5dcf2ea0e110" />
+<img width="2554" height="1266" alt="image" src="https://github.com/user-attachments/assets/7f32fe9a-47e9-476e-bbc6-e97613f73f66" />
+
 
 ### 3. Generation In-Progress UI
-![Generation Progress](docs/screenshots/03-generation-progress.png)
+
+<img width="2557" height="1424" alt="image" src="https://github.com/user-attachments/assets/66a87bae-8826-4059-97b4-b29a1eac6fba" />
+<img width="2559" height="1262" alt="image" src="https://github.com/user-attachments/assets/74567db0-5bb4-4961-86c0-f4e6a179840f" />
+<img width="2559" height="1262" alt="image" src="https://github.com/user-attachments/assets/3d815b22-9142-452c-90ee-55aa2d67d49f" />
+
 
 ### 4. Generated Question Paper View
-![Question Paper View](docs/screenshots/04-question-paper.png)
+
+<img width="2546" height="1272" alt="image" src="https://github.com/user-attachments/assets/2d23b17a-e317-45f7-8cb9-4973bdd45bee" />
+<img width="2549" height="1260" alt="image" src="https://github.com/user-attachments/assets/122710fd-b02a-4353-adfd-88b57f40564b" />
+
 
 ### 5. PDF Download Output
-![PDF Output](docs/screenshots/05-pdf-output.png)
+
 
 ## Key Features
 
@@ -200,16 +215,3 @@ $env:CI='true'; npm run build
 - Rich analytics on question quality and class performance
 - Offline-first support for low-connectivity schools
 
-## Team
-
-Add your team information here.
-
-- Team Name: [Your Team Name]
-- Members:
-	- [Member 1]
-	- [Member 2]
-	- [Member 3]
-
-## License
-
-Add your preferred license here (MIT recommended unless your organization requires a different license).
