@@ -127,7 +127,6 @@ const HomePage = () => {
     (state) => state.assignment
   );
   const [search, setSearch] = useState('');
-  const [deletingId, setDeletingId] = useState(null);
 
   // ID of the assignment currently being generated (from Redux live state)
   const generatingId = generating && currentAssignment
@@ -148,9 +147,7 @@ const HomePage = () => {
   const handleDelete = (a) => {
     const id = a.id || a._id;
     if (window.confirm(`Delete "${a.title || a.subject || 'this assignment'}"? This cannot be undone.`)) {
-      setDeletingId(id);
       dispatch(deleteAssignment(id));
-      setDeletingId(null);
     }
   };
 

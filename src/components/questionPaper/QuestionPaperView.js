@@ -103,9 +103,6 @@ const QuestionPaperView = ({ onBack, onDownload }) => {
     dispatch(regenerateQuestions({ paperId: currentPaper.id, sectionIndex, questionIndex }));
   };
 
-  const getTotalQuestions = () =>
-    currentPaper.sections.reduce((t, s) => t + s.questions.length, 0);
-
   const getTotalMarks = () =>
     currentPaper.sections.reduce(
       (t, s) => t + s.questions.reduce((st, q) => st + (q.marks || 0), 0),
