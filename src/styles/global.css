@@ -14,8 +14,8 @@
   --btn-dark-hover: #1f2937;
 
   /* Text colors */
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
+  --text-primary: #303030;
+  --text-secondary: #5a5a6a;
   --text-muted: #9ca3af;
 
   /* Background colors */
@@ -83,7 +83,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-primary);
@@ -105,7 +105,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
   color: var(--text-primary);
 }
